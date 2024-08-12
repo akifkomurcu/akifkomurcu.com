@@ -4,7 +4,9 @@
     <div>
       yazılar:
       <div *ngFor="let item of articles">
-        {{item}}
+        <a [href]="'post/' + item">
+          {{item}}
+        </a>
       </div>
     </div>
   </div>

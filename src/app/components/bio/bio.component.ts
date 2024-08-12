@@ -30,4 +30,5 @@ export class BioComponent implements OnInit {
     })
   }
 
+
 }
