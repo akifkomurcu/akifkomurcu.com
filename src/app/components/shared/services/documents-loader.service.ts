@@ -11,7 +11,7 @@ export class DocumentsLoaderService {
   ) {}
 
   loadAllDocumentsName(){
-    return this.http.get(`assets/posts/posts-list.json`).pipe(
+    return this.http.get(`http://localhost:3000/posts`).pipe(
       map((val) => {
         return val;
       })

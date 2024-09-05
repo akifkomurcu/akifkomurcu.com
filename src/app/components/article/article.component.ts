@@ -12,7 +12,9 @@ import * as marked from 'marked';
 export class ArticleComponent implements OnInit {
   postContent: any = '';
   loading: boolean = true;
-  error: string | null = null
+  error: string | null = null;
+
+  private readonly apiUrl = 'http://localhost:3000/posts';
 
   constructor(
     private http: HttpClient,
@@ -34,10 +36,10 @@ export class ArticleComponent implements OnInit {
   }
 
   loadMarkdown(postId: string): void {
-    const filePath = `assets/posts/${postId}.md`;
-    this.http.get(filePath, { responseType: 'text' }).subscribe({
+    const url = `${this.apiUrl}/${postId}`;
+    this.http.get<{ name: string, article: string }>(url).subscribe({
       next: (data) => {
-        this.postContent = marked.parse(data);
+        this.postContent = marked.parse(data.article);
         this.loading = false;
       },
       error: (err) => {

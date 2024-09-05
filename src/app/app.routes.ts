@@ -8,6 +8,6 @@ export const routes: Routes = [
     path: '',
     component: BaseComponent
   },
-  { path: 'post/:postId', component: ArticleComponent },
+  { path: 'posts/:postId', component: ArticleComponent },
   { path: '**', redirectTo: '/post/default-post', pathMatch: 'full' }
 ];

@@ -1,13 +1,26 @@
 <div class="container">
   <div class="row">
-    test
-    <div>
-      yazılar:
-      <div *ngFor="let item of articles">
-        <a [href]="'post/' + item">
-          {{item}}
-        </a>
+    <div class="content">
+      <div class="title">
+        <h1>
+          Test
+        </h1>
       </div>
+      <div class="main">
+        <input type="text" class="form-control"  aria-describedby="inputGroup-sizing-sm">
+      </div>
+
+    </div>
+    <div class="article-list">
+      <div *ngFor="let item of articles">
+        <div class="cursor-pointer">
+          <span role="button" [routerLink]="'posts/' + item.name">{{item.name}}</span>
+          <div class="article-content">
+            {{marking.parse(item.article)}}
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

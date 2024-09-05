@@ -6,6 +6,7 @@ import { Store, Select } from '@ngxs/store';
 import { LoadAllArticles } from '../shared/state/shared.actions';
 import { SharedState } from '../shared/state/shared.state';
 import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-bio',
   templateUrl: './bio.component.html',
@@ -17,6 +18,7 @@ export class BioComponent implements OnInit {
   sharedState$!: Observable<string[]>;
   articles: any[] = [];
   postContent: any;
+  marking = marked;
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
@@ -27,6 +29,7 @@ export class BioComponent implements OnInit {
     this.store.dispatch(new LoadAllArticles());
     this.sharedState$.subscribe((item: any) => {
         this.articles = item.articles;
+        console.log(this.articles)
     })
   }
 
