@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px; /* Eğer biraz boşluk istersen */
-  box-sizing: border-box; /* Padding'lerin toplam yüksekliğe dahil edilmesi için */
+  min-height: 60vh;
+  padding: 20px;
+  box-sizing: border-box;
+  justify-content: center;
 }
