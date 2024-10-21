@@ -1,0 +1,14 @@
+<div class="w-100">
+  <div class="w-100">
+    <div class="article-list">
+      <div *ngFor="let item of articles">
+        <div class="cursor-pointer mx-3">
+          <div class="pt-5 pb-2 text-primary text-capitalize text-center" role="button" [routerLink]="'posts/' + item.id">{{item.name}}</div>
+          <div class="article-content">
+            {{item.article}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

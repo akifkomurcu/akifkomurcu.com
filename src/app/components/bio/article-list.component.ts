@@ -8,11 +8,11 @@ import { SharedState } from '../shared/state/shared.state';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-bio',
-  templateUrl: './bio.component.html',
-  styleUrls: ['./bio.component.css']
+  selector: 'app-article-list',
+  templateUrl: './article-list.component.html',
+  styleUrls: ['./article-list.component.css']
 })
-export class BioComponent implements OnInit {
+export class ArticleListComponent implements OnInit {
 
   @Select(SharedState.getState)
   sharedState$!: Observable<string[]>;
@@ -29,8 +29,7 @@ export class BioComponent implements OnInit {
     this.store.dispatch(new LoadAllArticles());
     this.sharedState$.subscribe((item: any) => {
         this.articles = item.articles;
-        console.log(this.articles)
-    })
+    });
   }
 
 
