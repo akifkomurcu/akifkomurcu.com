@@ -21,7 +21,6 @@ html, body {
 }
 
 a {
-  text-decoration: none;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke,
     --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function, cubic-bezier(.4, 0, .2, 1)));
@@ -33,4 +32,20 @@ a:hover {
   text-decoration-color: var(--color-mute, var(--color-zinc-500));
   text-underline-offset: 2px;
   text-decoration-style: wavy;
+}
+
+.validation-error {
+  color: #ff4d4d;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+}
+
+input.ng-valid.ng-touched {
+  border-color: #5cb85c;
+  box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
 }
